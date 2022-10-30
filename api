@@ -1,0 +1,97 @@
+package com.developer.stripecustomer.controller;
+import org.stringFramework.beans.factory.annotation.value;
+
+@Restcontroller
+public class stripcustomer {
+@value("$(stipe.apikey)")
+String stripkey;
+ 
+@RequestMapping("/")
+public String index() {
+return "hello".stripekey;
+}
+}
+
+
+
+//code to create the customer data
+
+package com.developer.stripecustomer.model;
+@Entity
+public class customerData {
+@Id
+@GeneratedValue(strategy = GenerationType.SEQUENCE)
+public String Customer Name;
+public String Email;
+public String Mobile Number;
+public String City;
+private long customer_ID;
+public String getName() {
+return name;
+}
+ public void setName(String customer name) {
+this.customer name = customer name;
+
+public String getEmail() {
+return Email;
+}
+public void setEmail(String Email) {
+this.Email = Email;
+}
+
+public String Mobile Number() {
+return Mobile Number;
+}
+
+public void Mobile Number(String Mobile Number) {
+this.Mobile Number = Mobile Number;
+
+
+public String getCity() {
+return City;
+}
+
+public void setCity(String City) {
+this.City = City;
+}
+
+
+
+
+package com.developer.stripecustomer.controller;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.Restcontroller;
+
+import com.talenteddeveloper.stripecusomer.model.customerData;
+import java.util.HashMap;
+public class customerAPI {
+@value("$(stripe.apikey)")
+String stripekey;
+
+public customerData index(@ReqestBody customerData data) throws stripeException { {
+stripe.apikey = stripekey;
+
+Map<String, Object>  params = new HashMap<>();
+params.put("customer name", data.getName());
+params.put("Email", data.getEmail());
+params.put("customer name", data.getName());
+params.put("Mobile Number", data.Mobile Number());
+params.put("City", data.City());
+customer Customer = customer.create(params);
+return data;
+
+}
+}
+
+// go to localhost website and give the url as localhost:8080/app/createcustomer with the post method
+
+and create the code in JSON 
+{
+"customer name" : "abc",
+"Email" : "abc@gamil.com",
+"Mobile Number : "8694784597",
+"City" : "Bangalore"
+}
+
